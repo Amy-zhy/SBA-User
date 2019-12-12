@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  	<contextName>smcauthapp</contextName>
-  	<property name="log.path" value="/fsdsmc-data/logs"/>
+  	<contextName>fsdauthapp</contextName>
+  	<property name="log.path" value="/sbauser-data/logs"/>
     <!-- %m输出的信息,%p日志级别,%t线程名,%d日期,%c类的全名,%i索引【从数字0开始递增】,,, -->
     <!-- appender是configuration的子节点，是负责写日志的组件。 -->
     <!-- ConsoleAppender：把日志输出到控制台 -->
@@ -17,13 +17,13 @@
     <!--             2.如果日期没有发生变化，但是当前日志的文件大小超过1KB时，对当前日志进行分割 重命名-->
     <appender name="syslog"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${log.path}/smcauthapp.log</File>
+        <File>${log.path}/fsdauthapp.log</File>
         <!-- rollingPolicy:当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名。 -->
         <!-- TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
             <!-- 文件名：log/sys.2017-12-05.0.log -->
-            <fileNamePattern>${log.path}/smcauthapp.%d.%i.log</fileNamePattern>
+            <fileNamePattern>${log.path}/fsdauthapp.%d.%i.log</fileNamePattern>
             <!-- 每产生一个日志文件，该日志文件的保存期限为30天 -->
             <maxHistory>30</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy  class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -47,7 +47,7 @@
     <!-- 指定项目中某个包，当有日志操作行为时的日志记录级别 -->
     <!-- com.appley为根包，也就是只要是发生在这个根包下面的所有日志操作行为的权限都是DEBUG -->
     <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  -->
-    <logger name="com.ibm.fsdsmc" level="DEBUG">
+    <logger name="com.fsd.sbauser" level="DEBUG">
         <appender-ref ref="syslog" />
     </logger>
 </configuration>

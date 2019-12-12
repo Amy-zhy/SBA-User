@@ -3,11 +3,11 @@ spring:
     name: user-service
 
   mail: # JavaMailSender config
-    # maillink: http://localhost:8088/user/api/fsd/users/confirmed/
+    # maillink: http://localhost:9990/user/api/fsd/users/confirmed/
     host: smtp.163.com
     port: 465 # mailSenderServer：smtp.163.com，use SSL，prot 465 or 587
-    username: liker007@163.com
-    password: liker007   # token generated from mail.163.com
+    username: yhz04056608@163.com
+    password: zhy1468770417   # token generated from mail.163.com
     default-encoding: UTF-8
     properties:
       mail:
@@ -36,13 +36,13 @@ spring:
   profiles: dev
 
   mail: # JavaMailSender config
-    maillink: http://localhost:8088/user/confirmed/
+    maillink: http://localhost:9990/user/confirmed/
     loginlink: http://localhost:4200/login
 
   #数据库连接配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://106.54.194.33:3306/fsd?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://106.54.194.33:3306/smc?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: admin
 
@@ -72,13 +72,13 @@ spring:
   profiles: prod
 
   mail: # JavaMailSender config
-    maillink: http://106.54.194.33:8088/user/confirmed/
+    maillink: http://106.54.194.33:9990/user/confirmed/
     loginlink: http://106.54.194.33:4200/login
 
   #数据库连接配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://106.54.194.33:3306/fsd?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://106.54.194.33:3306/smc?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: admin
     
@@ -97,8 +97,5 @@ eureka:
     healthcheck:
       enabled: true
   instance:
-    #    prefer-ip-address: false
-    #    hostname: 106.54.194.33
-    #    instance-id: 106.54.194.33:${server.port}
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 10

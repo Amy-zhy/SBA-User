@@ -83,7 +83,7 @@ public class UsersController {
 //		  return ResponseEntity.ok().body(CommonResult.build(Const.COMMONRESULT_OK_CODE, "User have confirmed!"));
 		  System.out.println("发送html文本文件-发生成功");
 		  logger.error("User have confirmed!");
-		  return "<a href='"+ loginlink +"'>please click here to login SMC system</a>";
+		  return "<span> please click<a href='"+ loginlink +"'> here </a>to login System Market Charting system</span>";
 	  }
 	  return "User confirm action failed!";
 //	  return ResponseEntity.ok().body(CommonResult.build(Const.COMMONRESULT_ERROR_CODE, "User confirm action failed!"));

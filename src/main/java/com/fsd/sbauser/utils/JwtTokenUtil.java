@@ -70,7 +70,10 @@ public class JwtTokenUtil implements Serializable {
           return expireDate.before(new Date());
       }else{
     	  // a原来token过期
-          return issueDate.before(lastupDate);
+          // return issueDate.before(lastupDate);
+          Date issueDateTen = new Date(issueDate.getTime() +3000); // 3 seconds
+          System.out.println(issueDateTen + "********************"+ lastupDate);
+          return issueDateTen.before(lastupDate); 
       }
   }
 

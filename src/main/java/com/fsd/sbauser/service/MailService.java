@@ -28,16 +28,16 @@ public class MailService {
     private JavaMailSender javaMailSender;
 
     /**
-     * a发送简单文本文件 for test
+     * test email function
      */
     public void sendSimpleEmail(){
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("liker007@163.com");
-            message.setTo("xuexp@cn.fsd.com");
-            message.setSubject("hello");
-            message.setText("helloha");
-            message.setCc("liker007@163.com");
+            message.setFrom("yhz04056608@163.com");
+            message.setTo("759241899@qq.com");
+            message.setSubject("FSD");
+            message.setText("SBA assessment");
+            message.setCc("yhz04056608@163.com");
             mailSender.send(message);
 
         }catch (Exception e){
@@ -47,28 +47,28 @@ public class MailService {
     }
 
     /**
-     * a发送html文本
+     * send new pw email
      * @param
      * @throws MessagingException 
      */
     @Async
     public void sendHTMLMail(String email, String username) throws MessagingException{
     
-//        try {
+       try {
     	MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
-            messageHelper.setFrom("liker007@163.com");
+            messageHelper.setFrom("yhz04056608@163.com");
             messageHelper.setTo(email);
-            messageHelper.setCc("liker007@163.com");
-            messageHelper.setSubject("Welcome to SMC system");
-            messageHelper.setText("<a href='"+ maillink + username + "'>please click here to confirm your sign up!</a>", true);
+            messageHelper.setCc("yhz04056608@163.com");
+            messageHelper.setSubject("User Confirm of Stock Market Charting System");
+            messageHelper.setText("<h3>please click </h3><a href='"+ maillink + username + "'>Here</a><h3> to confirm your registration!</h3>", true);
             mailSender.send(mimeMessage);
             System.out.println("发送html文本文件-成功");
-//        }catch (Exception e){
-//        	e.printStackTrace();
-//        	System.out.println("发送html文本文件-发生异常");
-//        	logger.error("html email send failed!", e.getMessage());
-//        }
+       } catch (Exception e){
+       	e.printStackTrace();
+       	System.out.println("发送html文本文件-发生异常");
+       	logger.error("html email send failed!", e.getMessage());
+       }
     }
     
     /**
@@ -77,11 +77,11 @@ public class MailService {
     public void sendNewPasswordEmail(String email, String newpassword){
 //        try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("liker007@163.com");
+            message.setFrom("yhz04056608@163.com");
             message.setTo(email);
-            message.setSubject("Your New Password to Login SMC System");
-            message.setText("Your New Password >>>> "+ newpassword);
-            message.setCc("liker007@163.com");
+            message.setSubject("Please using new password to login system!");
+            message.setText("Please Remember Your New Password >>>> "+ newpassword);
+            message.setCc("yhz04056608@163.com");
             mailSender.send(message);
 
 //        }catch (Exception e){

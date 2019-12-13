@@ -137,8 +137,8 @@ public class UsersController {
     //       System.out.println("发送简单文本文件-发生异常"+e.getMessage());
 	  // }
 
-      return ResponseEntity.ok().body(CommonResult.build(Const.COMMONRESULT_OK_CODE, "Password change successed, you can also find your new password in your mail box, please relogin with your new pasword!"));
-
+      // return ResponseEntity.ok().body(CommonResult.build(Const.COMMONRESULT_OK_CODE, "Password change successed, you can also find your new password in your mail box, please relogin with your new pasword!"));
+      return ResponseEntity.ok().body(CommonResult.build(Const.COMMONRESULT_OK_CODE, "Password change successed, please relogin with your new pasword!"));
   }
 
   @GetMapping("/logout/{username}")

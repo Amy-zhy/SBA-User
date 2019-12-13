@@ -61,7 +61,7 @@ public class MailService {
             messageHelper.setTo(email);
             messageHelper.setCc("yhz04056608@163.com");
             messageHelper.setSubject("User Confirm of Stock Market Charting System");
-            messageHelper.setText("<h3>please click </h3><a href='"+ maillink + username + "'>Here</a><h3> to confirm your registration!</h3>", true);
+            messageHelper.setText("<span><h3>please click </h3><a href='"+ maillink + username + "'>Here</a><h3> to confirm your registration!</h3></span>", true);
             mailSender.send(mimeMessage);
             System.out.println("发送html文本文件-成功");
        } catch (Exception e){

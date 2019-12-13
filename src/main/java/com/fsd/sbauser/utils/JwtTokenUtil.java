@@ -23,7 +23,7 @@ public class JwtTokenUtil implements Serializable {
   private static final long serialVersionUID = 3795255684130470783L;
   private static final String SECRET = "usersecurityservice";
   private static final String ISSUSER = "Amy";
-  private static final String ROLE_CLAIMS = "FSDsmcRole";
+  private static final String ROLE_CLAIMS = "FSDRole";
 
   public static String generateToken(UserDetails details, boolean isRememberMe) {
     // if click remember me，the token expiration time will be EXPIRATION_REMEMBER

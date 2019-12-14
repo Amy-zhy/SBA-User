@@ -27,7 +27,7 @@ public class SbauserApplicationTests {
 	@Test
 	public void userLogin(){
 		try {
-			String username = "liker";
+			String username = "Amy";
 			String password = "111111";
 			System.out.println("***********login successed");
 			Userinfolist userinfolist = usersService.getUserByUsernameAndPassword(username, password);
